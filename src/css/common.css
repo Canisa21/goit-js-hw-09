@@ -16,3 +16,51 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.field {
+  display: inline-block;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.value {
+display: flex;
+font-size: 6rem;
+color:coral;
+}
+
+.label {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+button {
+  background-color: bisque;
+background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 40px;
+  pointer-events: auto;
+  white-space: nowrap;
+  border: 0;
+  font-size: 1rem;
+  }
+ 
+  input {
+    height: 40px;
+      line-height: 40px;
+      outline: 0;
+      padding: 0 40px;
+      text-align: center;
+      font-size: 1rem;
+      margin: 0 30px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+      border-color: #FF7E31;
+      color: #ac3b22;
+
+  }
