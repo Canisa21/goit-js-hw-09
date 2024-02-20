@@ -9,7 +9,8 @@ const handleForm = event => {
   const amount = parseInt(form.elements.amount.value, 10);
   setTimeout(() => {
     for (let i = 1; i <= amount; i++) {
-      createPromise(i, delayStep)
+      const currentDelay = firstDelay + (i - 1) * delayStep;
+      createPromise(i, currentDelay)
         .then(({ position, delay }) => {
           Notiflix.Notify.success(`Fulfilled promise ${position} in ${delay}ms`);
         })
@@ -17,18 +18,20 @@ const handleForm = event => {
           Notiflix.Notify.failure(`Rejected promise ${position} in ${delay}ms`);
         });
     }
-  }, firstDelay);
+  });
 };
 
 form.addEventListener('submit', handleForm);
 
 function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
-    const shouldResolve = Math.random() > 0.3;
-    if (shouldResolve) {
-      resolve({ position, delay }); // Fulfill
-    } else {
-      reject({ position, delay }); // Reject
-    }
+    setTimeout(() => {
+      const shouldResolve = Math.random() > 0.3;
+      if (shouldResolve) {
+        resolve({ position, delay }); // Fulfill
+      } else {
+        reject({ position, delay }); // Reject
+      }
+    }, delay);
   });
 }
